@@ -26,6 +26,7 @@ stages:
             azureContainerRegistry: 'sriramdockerhub.azurecr.io'
             command: 'Tag image'
             tagMultipleImages: true
-            imageNamesPath: '**/promotion.*'
+            imageNamesPath: '**/promotion'
+        
                         
               
