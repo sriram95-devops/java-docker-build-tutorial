@@ -20,7 +20,7 @@ stages:
           
        
         - script: |
-                 cat **/promotion
+                 cat $(Build.SourcesDirectory)/promotion
         
                         
               
