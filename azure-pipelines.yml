@@ -19,14 +19,8 @@ stages:
             dockerVersion: '17.09.0-ce'
           
        
-        - task: Docker@1
-          inputs:
-            containerregistrytype: 'Azure Container Registry'
-            azureSubscriptionEndpoint: 'azure to devops'
-            azureContainerRegistry: 'sriramdockerhub.azurecr.io'
-            command: 'Tag image'
-            tagMultipleImages: true
-            imageNamesPath: '**/promotion'
+        - script: |
+                 cat **/promotion
         
                         
               
