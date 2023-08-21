@@ -18,13 +18,14 @@ stages:
           inputs:
             dockerVersion: '17.09.0-ce'
           
-        - task: Docker@2
+        - task: Docker@1
           inputs:
-            containerRegistry: 'dockerlogin'
-            repository: 'testdocker'
-            command: 'buildAndPush'
-            Dockerfile: '**/Dockerfile'
-        - script: |
-                 echo $containerRegistry/$Containerrepository
-        
-        
+            containerregistrytype: 'Azure Container Registry'
+            azureSubscriptionEndpoint: 'azure to devops'
+            azureContainerRegistry: 'sriramdockerhub.azurecr.io'
+            command: 'Build an image'
+            dockerFile: '**/Dockerfile'
+            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
+          
+                 
+      
