@@ -26,6 +26,12 @@ stages:
             command: 'Build an image'
             dockerFile: '**/Dockerfile'
             imageName: '$(Build.Repository.Name):$(Build.BuildId)'
-          
+        
+        - task: Docker@1
+          inputs:
+            containerregistrytype: 'Container Registry'
+            dockerRegistryEndpoint: 'dockerlogin'
+            command: 'Push an image'
+            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
                  
       
