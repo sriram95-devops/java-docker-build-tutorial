@@ -20,8 +20,7 @@ stages:
           
        
         - script: |
-                images = echo $(Build.SourcesDirectory)/promotion
-                docker image pull $images
+                cat $(Build.SourcesDirectory)/promotion | docker image pull 
                 docker images
                         
               
