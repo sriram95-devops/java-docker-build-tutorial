@@ -24,5 +24,7 @@ stages:
             repository: 'testdocker'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
+        - script: |
+                 echo $repository
         
         
