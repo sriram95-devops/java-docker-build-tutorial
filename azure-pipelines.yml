@@ -18,20 +18,14 @@ stages:
           inputs:
             dockerVersion: '17.09.0-ce'
           
+       
         - task: Docker@1
           inputs:
             containerregistrytype: 'Azure Container Registry'
             azureSubscriptionEndpoint: 'azure to devops'
             azureContainerRegistry: 'sriramdockerhub.azurecr.io'
-            command: 'Build an image'
-            dockerFile: '**/Dockerfile'
-            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
-        
-        - task: Docker@1
-          inputs:
-            containerregistrytype: 'Container Registry'
-            dockerRegistryEndpoint: 'dockerlogin'
-            command: 'Push an image'
-            imageName: '$(Build.Repository.Name):$(Build.BuildId)'
-                 
-      
+            command: 'Tag image'
+            tagMultipleImages: true
+            imageNamesPath: '**/promotion.*'
+                        
+              
