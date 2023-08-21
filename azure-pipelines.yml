@@ -25,6 +25,6 @@ stages:
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
         - script: |
-                 echo $containerRegistry/$repository
+                 echo $containerRegistry/$Containerrepository
         
         
