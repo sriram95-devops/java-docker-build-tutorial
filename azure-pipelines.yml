@@ -20,7 +20,8 @@ stages:
           
        
         - script: |
-                cat $(Build.SourcesDirectory)/promotion | docker image pull 
-                docker images
+                cat $(Build.SourcesDirectory)/promotion 
+                docker image pull 
+                docker image
                         
               
